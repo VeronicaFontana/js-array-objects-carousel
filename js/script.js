@@ -2,7 +2,7 @@ const itemsWrapper = document.querySelector(".items-wrapper");
 const btnUp = document.querySelector(".btn-up");
 const btnDown = document.querySelector(".btn-down");
 
-const images = [
+const games = [
   {
       image: 'img/01.webp',
       title: 'Marvel\'s Spiderman Miles Morale',
@@ -26,10 +26,18 @@ const images = [
   }
 ];
 
-images.push(" ");
+const allGames = games.filter((game) =>{
+  return game !== " ";
+})
 
-images.forEach((game) =>{
-  itemsWrapper.innerHTML += `<img src = "${game.image}" class ="items hide">`
+allGames.forEach((game) =>{
+  itemsWrapper.innerHTML += `
+  <img src = "${game.image}" class ="items hide">
+  <div class="text">
+    <h2>${game.title}</h2>
+    <p>${game.text}</p>
+  </div>
+  `
 })
 
 
