@@ -1,0 +1,44 @@
+.main-wrapper{
+  background-color: rgb(154, 154, 247);
+}
+
+.container{
+  height: 60%;
+}
+
+.btn-up, .btn-down{
+  background-color: rgba(255, 255, 255, 0.451);
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+.btn-up:hover, .btn-down:hover{
+  cursor:pointer;
+  box-shadow: 0 0 3px black;
+}
+
+.btn-up{
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+}
+
+.btn-down{
+  left: 50%;
+  transform: translateX(-55%);
+  bottom: 10px;
+}
+
+.hide{
+  display: none;
+}
+
+.items-wrapper img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.items-wrapper{
+  border: 1px solid red;
+}
