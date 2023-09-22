@@ -26,19 +26,23 @@ const games = [
   }
 ];
 
-const allGames = games.filter((game) =>{
-  return game !== " ";
-})
+games.push(" ");
 
-allGames.forEach((game) =>{
+console.log(games);
+
+games.forEach((game) =>{
   itemsWrapper.innerHTML += `
-  <img src = "${game.image}" class ="items hide">
-  <div class="text">
-    <h2>${game.title}</h2>
-    <p>${game.text}</p>
+  <div class ="items hide">
+    <img src = "${game.image}" >
+    <div class="text">
+      <h2>${game.title}</h2>
+      <p>${game.text}</p>
+    </div>
   </div>
   `
 })
+
+
 
 
 const itemsCollection = document.getElementsByClassName("items");

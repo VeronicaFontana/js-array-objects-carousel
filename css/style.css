@@ -33,7 +33,12 @@
   display: none;
 }
 
-.items-wrapper img{
+.items-wrapper .items{
+  height: 100%;
+  width: 100%;
+}
+
+.items-wrapper div img{
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -46,6 +51,8 @@
 .text{
   position: absolute;
   bottom: 0;
+  right: 10px;
   color: white;
+  text-align: end;
 }
 
