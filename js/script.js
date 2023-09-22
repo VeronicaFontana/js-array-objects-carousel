@@ -1,6 +1,7 @@
 const itemsWrapper = document.querySelector(".items-wrapper");
 const btnUp = document.querySelector(".btn-up");
 const btnDown = document.querySelector(".btn-down");
+const thumbBox = document.querySelector(".thumb-box")
 
 const games = [
   {
@@ -42,6 +43,17 @@ games.forEach((game) =>{
   `
 })
 
+const thumbImg = games.filter((game) =>{
+  return game !== " ";
+})
+
+thumbImg.forEach((game) =>{
+  thumbBox.innerHTML += `
+  <div class="thumb">
+    <img src = "${game.image}" >
+  </div>
+  `
+})
 
 
 
