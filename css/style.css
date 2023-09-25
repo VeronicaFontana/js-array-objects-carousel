@@ -36,18 +36,11 @@
   width: 100%;
 }
 
-.slider{
-  border: 1px solid rgb(64, 255, 0);
-}
 
 .items-wrapper div img, .thumb img{
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-.items-wrapper{
-  border: 1px solid red;
 }
 
 .text{

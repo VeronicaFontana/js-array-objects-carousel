@@ -97,34 +97,9 @@ btnDown.addEventListener("click", function(){
 
 // FUNCTIONS
 function scrolling(){
-  let counter = 0;
   autoScroll.addEventListener("click", function(){
-    counter++;
-
-    if(counter % 2 === 0){
-      scrollingDown();
-    }else if(counter % 2 !== 0){
-      scrollingUp();
-    }
+    scrollingUp();
   })
-}
-
-function scrollingDown(){
-  setInterval(function(){
-    if(counterImg === 0){
-      itemsCollection[counterImg].classList.add("hide");
-  
-      counterImg = (itemsCollection.length - 2);
-        
-      itemsCollection[counterImg].classList.remove("hide");
-    }else{
-      itemsCollection[counterImg].classList.add("hide");
-        
-      counterImg--;
-  
-      itemsCollection[counterImg].classList.remove("hide");
-    }
-  }, 2000)
 }
 
 function scrollingUp(){
