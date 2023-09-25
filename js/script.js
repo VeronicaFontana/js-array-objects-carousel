@@ -43,53 +43,56 @@ games.forEach((game) =>{
   `
 })
 
-const thumbImg = games.filter((game) =>{
-  return game !== " ";
+const thumbImg = games.filter((gameThumb) =>{
+  return gameThumb !== " ";
 })
 
-thumbImg.forEach((game) =>{
+thumbImg.forEach((gameThumb) =>{
   thumbBox.innerHTML += `
   <div class="thumb">
-    <img src = "${game.image}" >
+    <img src = "${gameThumb.image}" >
   </div>
   `
 })
-
-
 
 const itemsCollection = document.getElementsByClassName("items");
 
 let counterImg = 0;
 itemsCollection[counterImg].classList.remove("hide");
+console.log(counterImg)
+
+btnUp.addEventListener("click", () => console.log("pulsante premnut"))
+
 
 btnUp.addEventListener("click", function(){
   itemsCollection[counterImg].classList.add("hide");
+  console.log("UP Premuto")
 
   counterImg++;
+  console.log(counterImg)
 
   itemsCollection[counterImg].classList.remove("hide");
-  
+
   if (counterImg === (itemsCollection.length - 1)){
-    itemsCollection[counterImg].classList.add("hide");
+  itemsCollection[counterImg].classList.add("hide");
+  counterImg = 0;
 
-    counterImg = 0;
-
-    itemsCollection[counterImg].classList.remove("hide");
+  itemsCollection[counterImg].classList.remove("hide");
   }
-}) 
+})
 
 btnDown.addEventListener("click", function(){
   if(counterImg === 0){
     itemsCollection[counterImg].classList.add("hide");
 
     counterImg = (itemsCollection.length - 2);
-
+      
     itemsCollection[counterImg].classList.remove("hide");
   }else{
     itemsCollection[counterImg].classList.add("hide");
-
+      
     counterImg--;
 
     itemsCollection[counterImg].classList.remove("hide");
   }
-}) 
+})

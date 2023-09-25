@@ -18,14 +18,12 @@
 }
 
 .btn-up{
-  left: 50%;
-  transform: translateX(-50%);
+  right: 100px;
   top: 10px;
 }
 
 .btn-down{
-  left: 50%;
-  transform: translateX(-55%);
+  right: 100px;
   bottom: 10px;
 }
 
