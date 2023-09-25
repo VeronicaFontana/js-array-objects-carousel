@@ -3,8 +3,7 @@ const btnUp = document.querySelector(".btn-up");
 const btnDown = document.querySelector(".btn-down");
 const thumbBox = document.querySelector(".thumb-box")
 
-const autoScrollUp = document.querySelector(".auto-scroll-up")
-const autoScrollDown = document.querySelector(".auto-scroll-down")
+const autoScroll = document.querySelector(".auto-scroll");
 
 const games = [
   {
@@ -58,13 +57,11 @@ thumbImg.forEach((gameThumb) =>{
   `
 })
 
-const itemsCollection = document.getElementsByClassName("items");
+scrolling();
 
+const itemsCollection = document.getElementsByClassName("items");
 let counterImg = 0;
 itemsCollection[counterImg].classList.remove("hide");
-
-scrollingUp();
-scrollingUp();
 
 btnUp.addEventListener("click", function(){
   itemsCollection[counterImg].classList.add("hide");
@@ -98,43 +95,53 @@ btnDown.addEventListener("click", function(){
 })
 
 
+// FUNCTIONS
+function scrolling(){
+  let counter = 0;
+  autoScroll.addEventListener("click", function(){
+    counter++;
 
-function scrollingUp(){
-  autoScrollUp.addEventListener("click", function(){
-    setInterval(function(){
-      itemsCollection[counterImg].classList.add("hide");
-    
-      counterImg++;
-    
-      itemsCollection[counterImg].classList.remove("hide");
-    
-      if (counterImg === (itemsCollection.length - 1)){
-      itemsCollection[counterImg].classList.add("hide");
-      counterImg = 0;
-    
-      itemsCollection[counterImg].classList.remove("hide");
-      }
-    }, 2000)
+    if(counter % 2 === 0){
+      scrollingDown();
+    }else if(counter % 2 !== 0){
+      scrollingUp();
+    }
   })
 }
 
 function scrollingDown(){
-  autoScrollDown.addEventListener("click", function(){
-    setInterval(function(){
-      if(counterImg === 0){
-        itemsCollection[counterImg].classList.add("hide");
-    
-        counterImg = (itemsCollection.length - 2);
-          
-        itemsCollection[counterImg].classList.remove("hide");
-      }else{
-        itemsCollection[counterImg].classList.add("hide");
-          
-        counterImg--;
-    
-        itemsCollection[counterImg].classList.remove("hide");
-      }
-    }, 2000)
-  })
+  setInterval(function(){
+    if(counterImg === 0){
+      itemsCollection[counterImg].classList.add("hide");
+  
+      counterImg = (itemsCollection.length - 2);
+        
+      itemsCollection[counterImg].classList.remove("hide");
+    }else{
+      itemsCollection[counterImg].classList.add("hide");
+        
+      counterImg--;
+  
+      itemsCollection[counterImg].classList.remove("hide");
+    }
+  }, 2000)
+}
+
+function scrollingUp(){
+  setInterval(function(){
+    itemsCollection[counterImg].classList.add("hide");
+
+    counterImg++;
+
+    itemsCollection[counterImg].classList.remove("hide");
+
+    if (counterImg === (itemsCollection.length - 1)){
+      itemsCollection[counterImg].classList.add("hide");
+
+      counterImg = 0;
+
+      itemsCollection[counterImg].classList.remove("hide");
+    }
+  }, 2000)
 }
 
